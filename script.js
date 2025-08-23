@@ -1,3 +1,22 @@
+document.addEventListener('DOMContentLoaded', () => {
+  // Select all the elements we want to animate
+  const animatedElements = document.querySelectorAll(
+    '.about h2, .about p, .gallery-section h2, .blog-link-section h2, .blog-link-section p, .join h2, .join p, .testimonials h2, .testimonial-list'
+  );
+
+  // Function to apply a staggered animation
+  function animateElements() {
+    animatedElements.forEach((element, index) => {
+      setTimeout(() => {
+        element.classList.add('fly-in');
+      }, index * 100); // Staggers the animation start by 100ms for each element
+    });
+  }
+
+  // Animate the elements when the page is ready
+  animateElements();
+});
+
 // Cycling testimonials
 const testimonials = [
   {
@@ -40,14 +59,6 @@ if (testimonialDiv) {
     showTestimonial(currentTestimonial);
   }, 4000);
 }
-
-/* Join button popup
-const joinBtn = document.getElementById('joinBtn');
-if (joinBtn) {
-  joinBtn.onclick = function() {
-    alert('Thanks for your interest! Visit our Discord or contact us to join the Pepe Programming Hub community!');
-  };
-}*/
 
 // Join button popup for url
 const joinBtn = document.getElementById('joinBtn');

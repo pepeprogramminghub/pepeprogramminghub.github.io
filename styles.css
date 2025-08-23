@@ -196,7 +196,7 @@ main {
 
 .gallery-card img {
   width: 100%;
-  height: 180px;
+  height: 250px;
   object-fit: cover;
   display: block;
 }
@@ -377,7 +377,9 @@ body.dark .blog-link-section p {
     padding: 1.2rem 0.5rem;
   }
   .gallery-card img {
-    height: 120px;
+    height: auto; /* This is the key change to make the images show full */
+    aspect-ratio: 1/1; /* This forces a 1:1 square aspect ratio */
+    width: 100%;
   }
   .gallery-card {
     width: 90vw;
@@ -392,4 +394,35 @@ body.dark .blog-link-section p {
     font-size: 0.92rem;
     padding: 0.24rem 0.7rem;
   }
+}
+
+
+/* Animation Keyframes */
+@keyframes fly-in-animation {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Class to apply the animation */
+.fly-in {
+  animation: fly-in-animation 0.8s ease-out forwards;
+}
+
+/* Initially hide the elements to be animated */
+.about h2,
+.about p,
+.gallery-section h2,
+.blog-link-section h2,
+.blog-link-section p,
+.join h2,
+.join p,
+.testimonials h2,
+.testimonial-list {
+  opacity: 0;
 }
