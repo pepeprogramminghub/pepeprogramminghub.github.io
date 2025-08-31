@@ -64,7 +64,8 @@ if (testimonialDiv) {
 const joinBtn = document.getElementById('joinBtn');
 if (joinBtn) {
   joinBtn.onclick = function() {
-    window.open('https://wa.link/94t05p', '_blank');
+    window.open('https://wa.me/2349066115252?text=Hi%2C%20I%20am%20interested%20in%20joining%20Pepe%20Hub%2C%20my%20name%20is%20...
+', '_blank');
   };
 }
 
