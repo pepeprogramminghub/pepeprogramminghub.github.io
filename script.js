@@ -1,107 +1,63 @@
-document.addEventListener('DOMContentLoaded', () => {
-  // Select all the elements we want to animate
-  const animatedElements = document.querySelectorAll(
-    '.about h2, .about p, .gallery-section h2, .blog-link-section h2, .blog-link-section p, .join h2, .join p, .testimonials h2, .testimonial-list'
-  );
-
-  // Function to apply a staggered animation
-  function animateElements() {
-    animatedElements.forEach((element, index) => {
-      setTimeout(() => {
-        element.classList.add('fly-in');
-      }, index * 100); // Staggers the animation start by 100ms for each element
-    });
-  }
-
-  // Animate the elements when the page is ready
-  animateElements();
-});
-
-// Cycling testimonials
-const testimonials = [
-  {
-    text: "Pepe Programming Hub gave me the confidence to build my first website. Now I'm teaching my friends how to code too!",
-    author: "-- Sarah, 15"
-  },
-  {
-    text: "The mentors are so friendly and helpful. I love the community projects and challenges!",
-    author: "-- James, 16"
-  },
-  {
-    text: "Before joining, I thought coding was too hard. But the tutorials made it easy and fun!",
-    author: "-- Emily, 14"
-  },
-  {
-    text: "I've learned Python, made a game, and even presented my app to my school! Thanks Pepe Hub!",
-    author: "-- Aiden, 17"
-  },
-];
-
-let currentTestimonial = 0;
-const testimonialDiv = document.getElementById('testimonialList');
-
-function showTestimonial(idx) {
-  testimonialDiv.style.opacity = 0;
-  setTimeout(() => {
-    testimonialDiv.innerHTML = `
-      <div>"${testimonials[idx].text}"</div>
-      <div style="margin-top:0.7rem;font-weight:bold;color:#3b82f6;">${testimonials[idx].author}</div>
-    `;
-    testimonialDiv.style.opacity = 1;
-  }, 250);
-}
-
-if (testimonialDiv) {
-  showTestimonial(currentTestimonial);
-
-  setInterval(() => {
-    currentTestimonial = (currentTestimonial + 1) % testimonials.length;
-    showTestimonial(currentTestimonial);
-  }, 4000);
-}
-
-// Join button popup for url
-const joinBtn = document.getElementById('joinBtn');
-if (joinBtn) {
-  joinBtn.onclick = function() {
-    window.open('https://wa.me/2349066115252?text=Hi%2C%20I%20am%20interested%20in%20joining%20Pepe%20Hub%2C%20my%20name%20is%20...
-', '_blank');
-  };
-}
-
-// THEME SWITCHER
-const themeSwitch = document.getElementById('themeSwitch');
-const themeIcon = document.getElementById('themeIcon');
-
-function setTheme(mode) {
-  if (mode === 'dark') {
-    document.body.classList.add('dark');
-    if (themeIcon) themeIcon.textContent = '🌞';
-    localStorage.setItem('theme', 'dark');
-  } else {
-    document.body.classList.remove('dark');
-    if (themeIcon) themeIcon.textContent = '🌙';
-    localStorage.setItem('theme', 'light');
-  }
-}
-
-// Load theme on startup
-(function() {
-  let preferred = localStorage.getItem('theme');
-  if (!preferred) {
-    // Detect OS preference
-    preferred = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-  }
-  setTheme(preferred);
+// Theme toggle with persistence
+(function(){
+  const root = document.documentElement;
+  const saved = localStorage.getItem('pepe-theme');
+  if(saved){ root.classList.toggle('light', saved === 'light'); }
+  const btn = document.getElementById('themeBtn');
+  const setIcon = () => btn.textContent = root.classList.contains('light') ? '🌞' : '🌙';
+  setIcon();
+  btn.addEventListener('click',()=>{
+    root.classList.toggle('light');
+    localStorage.setItem('pepe-theme', root.classList.contains('light')?'light':'dark');
+    setIcon();
+  });
 })();
 
-// Switch event
-if (themeSwitch) {
-  themeSwitch.addEventListener('click', () => {
-    if (document.body.classList.contains('dark')) {
-      setTheme('light');
-    } else {
-      setTheme('dark');
-    }
+// Mobile drawer
+(function(){
+  const btn = document.getElementById('menuBtn');
+  const drawer = document.getElementById('mobileNav');
+  btn.addEventListener('click',()=>{
+    const open = drawer.classList.toggle('open');
+    btn.setAttribute('aria-expanded', String(open));
   });
-}
+  drawer.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>drawer.classList.remove('open')));
+})();
+
+// WhatsApp CTA (prefill message)
+(function(){
+  const link = document.getElementById('whatsAppCta');
+  const msg = encodeURIComponent("Hi, I am interested in joining Pepe Programming Hub. My name is ________.");
+  link.href = `https://wa.me/2349066115252?text=${msg}`;
+})();
+
+// Join button — same as CTA
+(function(){
+  const btn = document.getElementById('joinBtn');
+  const msg = encodeURIComponent("Hi, I am interested in joining Pepe Hub. My name is ________.");
+  btn.addEventListener('click', (e)=>{
+    e.preventDefault();
+    window.open(`https://wa.me/2349066115252?text=${msg}`, '_blank');
+  });
+})();
+
+// Intersection-based reveal animations
+(function(){
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting) { e.target.classList.add('show'); io.unobserve(e.target); }});
+  }, { threshold:.15 });
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+})();
+
+// Testimonials rotator
+(function(){
+  const quotes = [
+    {t:"Pepe Programming Hub gave me the confidence to build my first website. Now I'm teaching my friends how to code too!", a:"— Sarah, 15"},
+    {t:"The mentors are so friendly and helpful. I love the community projects and challenges!", a:"— James, 16"},
+    {t:"Before joining, I thought coding was too hard. But the tutorials made it easy and fun!", a:"— Emily, 14"},
+    {t:"I've learned Python, made a game, and even presented my app to my school! Thanks Pepe Hub!", a:"— Aiden, 17"}
+  ];
+  let i = 0; const el = document.getElementById('tList');
+  const render = ()=>{ el.style.opacity = 0; setTimeout(()=>{ el.innerHTML = `<div>“${quotes[i].t}”</div><div style="margin-top:.6rem;font-weight:800;color:var(--brand)">${quotes[i].a}</div>`; el.style.opacity = 1; }, 200); };
+  render(); setInterval(()=>{ i = (i+1)%quotes.length; render(); }, 4200);
+})();

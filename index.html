@@ -1,138 +1,153 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1.0">
-  <title>Pepe Programming Hub - Coding for Teens & Young Innovators</title>
-
-  <meta name="description" content="Join Pepe Programming Hub, a vibrant community where teens learn to code, build projects, and innovate. Offering tutorials, mentorship, and community challenges.">
-  <meta name="keywords" content="coding for teens, programming for kids, learn to code, web development, Python, JavaScript, coding community, programming boot camp, Pepe Programming Hub">
-  <meta name="author" content="Agunechemba Ekene">
-  
-  <meta property="og:title" content="Pepe Programming Hub">
-  <meta property="og:description" content="Start your programming journey with our community of young innovators. Learn to code, create games, and build your first website!">
-  <meta property="og:image" content="https://agunechembaekene.wordpress.com/wp-content/uploads/2025/08/pepe-programming-hub-logo-1.png">
-  <meta property="og:url" content="https://pepeprogramminghub.github.io">
-  <meta property="og:type" content="website">
-
-  <link rel="icon" href="https://agunechembaekene.wordpress.com/wp-content/uploads/2025/08/favicon-16x16-1.png" sizes="any">
-  <link rel="icon" href="https://agunechembaekene.wordpress.com/wp-content/uploads/2025/08/favicon-16x16-1.png" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="manifest" href="/manifest.webmanifest">
-
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-  
-  <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pepe Programming Hub — Coding for Teens & Young Innovators</title>
+  <meta name="description" content="A vibrant community where teens learn to code, build projects, and innovate. Tutorials, mentorship, and community challenges." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet" />
+  <link rel="icon" href="https://agunechembaekene.wordpress.com/wp-content/uploads/2025/08/favicon-16x16-1.png" />
+  <meta property="og:title" content="Pepe Programming Hub" />
+  <meta property="og:description" content="Start your programming journey with our community of young innovators. Learn to code, create games, and build your first website!" />
+  <meta property="og:image" content="https://agunechembaekene.wordpress.com/wp-content/uploads/2025/08/pepe-programming-hub-logo-1.png" />
+  <meta property="og:type" content="website" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <div class="banner">
-    <p>🚀 Registration now open for our Coding Bootcamp! 🚀</p>
-  </div>
+  <a class="skip" href="#main">Skip to content</a>
 
-  <header>
-    <button id="themeSwitch" aria-label="Toggle light/dark theme" type="button">
-      <span id="themeIcon" aria-hidden="true">🌙</span>
-    </button>
+  <div class="banner" role="status">🚀 Registration now open for our Coding Bootcamp! 🚀</div>
 
-    <div class="bn-number">
-      BN: <span id="bnValue">8014966</span>
-    </div>
-
-    <div class="logo-container">
-      <a href="https://pepe.name.ng">
-        <img src="https://agunechembaekene.wordpress.com/wp-content/uploads/2025/08/pepe-programming-hub-logo-1.png"
-           alt="Pepe Programming Hub Logo"
-           class="main-logo">
+  <header class="header" aria-label="Primary">
+    <nav class="nav" aria-label="Main navigation">
+      <a class="brand" href="#home">
+        <img src="https://agunechembaekene.wordpress.com/wp-content/uploads/2025/08/pepe-programming-hub-logo-1.png" width="80" height="80" alt="Pepe Programming Hub logo" />
+        <span class="name">Pepe Programming Hub</span>
       </a>
+      <span class="bn" aria-label="Business Number">BN: 8014966</span>
+      <div class="links" role="menubar">
+        <a href="#about" role="menuitem">About</a>
+        <a href="#prodigies" role="menuitem">Prodigies</a>
+        <a href="#blog" role="menuitem">Blog</a>
+        <a href="#join" role="menuitem">Join</a>
+        <a href="#testimonials" role="menuitem">Testimonials</a>
+      </div>
+      <div style="display:flex; gap:.5rem; align-items:center">
+        <button class="theme" id="themeBtn" type="button" aria-label="Toggle theme">🌙</button>
+        <button class="hamburger" id="menuBtn" type="button" aria-expanded="false" aria-controls="mobileNav" aria-label="Open menu">☰</button>
+      </div>
+    </nav>
+    <div class="drawer" id="mobileNav" role="menu">
+      <a href="#about" role="menuitem">About</a>
+      <a href="#prodigies" role="menuitem">Prodigies</a>
+      <a href="#blog" role="menuitem">Blog</a>
+      <a href="#join" role="menuitem">Join</a>
+      <a href="#testimonials" role="menuitem">Testimonials</a>
     </div>
-    <h1>PEPE PROGRAMMING HUB</h1>
-    <p class="subtitle">Join our community of young innovators.</p>
-    <a class="cta-btn" href="#gallery">Get Inspired</a>
   </header>
 
-<br>
-<br>
-<a href="https://wa.me/2349066115252?text=Hi%2C%20I%20am%20interested%20in%20joining%20Pepe%20Hub%2C%20my%20name%20is%20...
-">
-<div style="display: flex; justify-content: center;">
-    <img style="width: 80%; border-radius: 10px;" src="https://agunechembaekene.wordpress.com/wp-content/uploads/2025/08/build-and-launch-your-website-with-ai.png" alt="A promotional image for building and launching a website with AI." />
-</div>
-</a>
-<br>
-<br>
-  
-  <main>
-    <section class="about">
-      <h2>Why Learn Programming?</h2>
-      <p>
-        At Pepe Programming Hub, we believe every teen can become a creator, not just a user, of technology.
-        We provide resources, mentorship, and a vibrant community to help you learn, create, and share your coding projects.
-      </p>
+  <main id="main">
+    <!-- Hero -->
+    <section id="home" class="hero">
+      <div>
+        <span class="eyebrow">Code. Create. Celebrate.</span>
+        <h1 class="h1">Teach your mind to build the future.</h1>
+        <p class="lead">At Pepe Programming Hub, teens don’t just learn syntax—they ship projects, present demos, and join a supportive community of young innovators across Nigeria and beyond.</p>
+        <div class="cta-row">
+          <a class="btn primary" id="whatsAppCta" href="#join">Join on WhatsApp</a>
+          <a class="btn" href="#prodigies">See Prodigies</a>
+        </div>
+      </div>
+      <div class="mock reveal">
+        <img loading="lazy" src="https://agunechembaekene.wordpress.com/wp-content/uploads/2025/08/build-and-launch-your-website-with-ai.png" width="1200" height="700" alt="Build and launch your website with AI – promo" />
+      </div>
     </section>
 
-    <section id="gallery" class="gallery-section">
-      <h2>Pepe Prodigies 💡</h2>
-      <div class="gallery">
-        <div class="gallery-card">
-          <img src="https://agunechembaekene.wordpress.com/wp-content/uploads/2025/08/emmanuel-okiri.jpg" alt="Python Prodigy">
-          <div class="caption">Python Prodigy - 2025</div>
+    <!-- About -->
+    <section id="about" class="section reveal">
+    <br>
+    <br>
+    <br>
+    <br>
+      <div class="panel about">
+        <div>
+          <h2 class="big">Why learn programming?</h2>
+          <p>Because it turns curiosity into power. We pair mentorship with hands-on challenges so every learner can move from <em>watching</em> tech to <em>creating</em> with it.</p>
         </div>
-        <div class="gallery-card">
-          <img src="https://agunechembaekene.wordpress.com/wp-content/uploads/2025/08/great-e1755909629853.png" alt="JavaScript Prodigy">
-          <div class="caption">JavaScript Prodigy - 2024</div>
-        </div>
-         <div class="gallery-card">
-          <img src="https://agunechembaekene.wordpress.com/wp-content/uploads/2025/08/imoh-e1755909658586.png" alt="Python Prodigy">
-          <div class="caption">Python Prodigy- 2024</div>
-        </div>
-         <div class="gallery-card">
-          <img src="https://agunechembaekene.wordpress.com/wp-content/uploads/2025/08/evans-e1755909397669.jpg" alt="HTML Canvas Prodigy">
-          <div class="caption">HTML Canvas Prodigy - 2024</div>
-        </div>
-        <div class="gallery-card">
-          <img src="https://agunechembaekene.wordpress.com/wp-content/uploads/2025/08/chibuchi-e1755909599707.png" alt="Blockly Prodigy">
-          <div class="caption">Blockly Prodigy - 2024</div>
-        </div>
-        <div class="gallery-card">
-          <img src="https://agunechembaekene.wordpress.com/wp-content/uploads/2025/08/noelion-e1755909545347.png" alt="JavaScript Prodigy">
-          <div class="caption">JavaScript Prodigy - 2024</div>
-        </div>
-        <div class="gallery-card">
-          <img src="https://agunechembaekene.wordpress.com/wp-content/uploads/2025/08/osayemi-e1755909574469.jpg" alt="CSS Prodigy">
-          <div class="caption">CSS Prodigy - 2023</div>
+        <div>
+          <h2 class="big">What you’ll get</h2>
+          <p>Guided pathways in Python and JavaScript, project reviews, and a friendly peer circle that celebrates your progress—not just your perfection.</p>
         </div>
       </div>
     </section>
 
-    <section class="blog-link-section">
-      <h2>Read Our Blog</h2>
-      <p>
-        Dive into coding tips, project showcases, and inspiring stories from <b>The Celebrated Tech Trainer</b>.
-      </p>
-      <a class="blog-link-btn" href="https://agunechemba.github.io/" target="_blank">
-        Visit the Blog
-      </a>
+    <!-- Gallery / Prodigies -->
+    <section id="prodigies" class="section reveal">
+    <br>
+    <br>
+    <br>
+    <br>
+      <header class="section-head">
+        <h2 class="big">Pepe Prodigies 💡</h2>
+        <small class="muted">Highlights from 2023–2025</small>
+      </header>
+      <div class="gallery" aria-live="polite">
+        <figure class="card"><img loading="lazy" src="https://agunechembaekene.wordpress.com/wp-content/uploads/2025/08/emmanuel-okiri.jpg" alt="Emmanuel — Python Prodigy" width="700" height="700"><figcaption class="cap">Python Prodigy — 2025</figcaption></figure>
+        <figure class="card"><img loading="lazy" src="https://agunechembaekene.wordpress.com/wp-content/uploads/2025/08/great-e1755909629853.png" alt="Great — JavaScript Prodigy" width="700" height="700"><figcaption class="cap">JavaScript Prodigy — 2024</figcaption></figure>
+        <figure class="card"><img loading="lazy" src="https://agunechembaekene.wordpress.com/wp-content/uploads/2025/08/imoh-e1755909658586.png" alt="Imoh — Python Prodigy" width="700" height="700"><figcaption class="cap">Python Prodigy — 2024</figcaption></figure>
+        <figure class="card"><img loading="lazy" src="https://agunechembaekene.wordpress.com/wp-content/uploads/2025/08/evans-e1755909397669.jpg" alt="Evans — HTML Canvas Prodigy" width="700" height="700"><figcaption class="cap">HTML Canvas Prodigy — 2024</figcaption></figure>
+        <figure class="card"><img loading="lazy" src="https://agunechembaekene.wordpress.com/wp-content/uploads/2025/08/chibuchi-e1755909599707.png" alt="Chibuchi — Blockly Prodigy" width="700" height="700"><figcaption class="cap">Blockly Prodigy — 2024</figcaption></figure>
+        <figure class="card"><img loading="lazy" src="https://agunechembaekene.wordpress.com/wp-content/uploads/2025/08/noelion-e1755909545347.png" alt="Noelion — JavaScript Prodigy" width="700" height="700"><figcaption class="cap">JavaScript Prodigy — 2024</figcaption></figure>
+        <figure class="card"><img loading="lazy" src="https://agunechembaekene.wordpress.com/wp-content/uploads/2025/08/osayemi-e1755909574469.jpg" alt="Osayemi — CSS Prodigy" width="700" height="700"><figcaption class="cap">CSS Prodigy — 2023</figcaption></figure>
+      </div>
     </section>
 
-    <section class="join">
-      <h2>Ready to Start?</h2>
-      <p>
-        Whether you’re a complete beginner or ready to build your own app, we have resources for you.
-      </p>
-      <button id="joinBtn">Join the Pepe Hub</button>
-    </section>
-
-    <section class="testimonials">
-      <h2>What Teens Say</h2>
-      <div class="testimonial-list" id="testimonialList">
+    <!-- Blog promo -->
+    <section id="blog" class="section reveal">
+    <br>
+    <br>
+    <br>
+    <br>
+      <div class="panel blog">
+        <div>
+          <h2 class="big">Read our blog</h2>
+          <p>Dive into coding tips, project showcases, and inspiring stories from <strong>The Celebrated Tech Trainer</strong>.</p>
         </div>
+        <p><a class="btn primary" href="https://agunechemba.github.io/" target="_blank" rel="noopener">Visit the Blog</a></p>
+      </div>
+    </section>
+
+    <!-- Join -->
+    <section id="join" class="section reveal">
+    <br>
+    <br>
+    <br>
+    <br>
+      <div class="panel join">
+        <h2 class="big">Ready to start?</h2>
+        <p>Whether you’re a complete beginner or ready to build an app, there’s a place for you here.</p>
+        <p><a class="btn primary" id="joinBtn" href="#">Join the Pepe Hub</a></p>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials" class="section reveal">
+    <br>
+    <br>
+    <br>
+    <br>
+      <div class="panel testimonials">
+        <h2 class="big">What Teens Say</h2>
+        <div id="tList" class="t-quote" aria-live="polite"></div>
+      </div>
     </section>
   </main>
 
   <footer>
-    <div>
-      &copy; 2025 Pepe Programming Hub. Made with <span style="color:#39d353;">❤</span>
-    </div>
+    <span>© 2025 Pepe Programming Hub — Made with ❤</span>
+    <a class="btn" href="#home">Back to top ↑</a>
   </footer>
 
   <script src="script.js"></script>
