@@ -88,11 +88,15 @@ footer{max-width:1100px;margin:2rem auto 3rem;padding:0 1rem;color:var(--muted);
   .drawer.open{display:block}
   .drawer a{display:block;padding:1rem;color:var(--text);text-decoration:none;border-bottom:1px dashed color-mix(in srgb, var(--text) 12%, transparent)}
 }
+
 @media (max-width: 560px){
   .gallery{grid-template-columns:1fr}
+  .gallery .card img{
+    object-fit:contain;
+    height:auto;
+  }
 }
 
-/* Motion preferences */ 
 @media (prefers-reduced-motion: no-preference){
   .reveal{opacity:0; transform:translateY(10px); transition: all .6s ease}
   .reveal.show{opacity:1; transform:none}
