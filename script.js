@@ -31,13 +31,14 @@
   link.href = `https://wa.me/2349066115252?text=${msg}`;
 })();
 
-// Join button — same as CTA
-(function(){
+// Join button — redirects to Google Form
+(function() {
   const btn = document.getElementById('joinBtn');
-  const msg = encodeURIComponent("Hi, I am interested in joining Pepe Hub. My name is ________.");
-  btn.addEventListener('click', (e)=>{
+  const formURL = "https://docs.google.com/forms/d/e/1FAIpQLSfSd1mRVW-h4aLwZyTTww5hnSufNU0mxLSa86f7H0TmwtsEXA/viewform?usp=header";
+
+  btn.addEventListener('click', (e) => {
     e.preventDefault();
-    window.open(`https://wa.me/2349066115252?text=${msg}`, '_blank');
+    window.open(formURL, '_blank');
   });
 })();
 
