@@ -112,8 +112,8 @@ input {
     color: #000;
   }
 
-  @media (prefers-color-scheme: dark) {
-    input {
+@media (prefers-color-scheme: dark) {
+input {
       background-color: #222;
       color: #fff;
       border: 1px solid #555;
