@@ -103,3 +103,19 @@ footer{max-width:1100px;margin:2rem auto 3rem;padding:0 1rem;color:var(--muted);
   .btn:hover{transform:translateY(-1px)}
   .card:hover img{scale:1.03; transition:scale .25s ease}
 }
+
+
+
+/*input fix for mobile*/
+input {
+    background-color: #fff;
+    color: #000;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    input {
+      background-color: #222;
+      color: #fff;
+      border: 1px solid #555;
+    }
+  }
