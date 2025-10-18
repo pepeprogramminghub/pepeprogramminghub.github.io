@@ -24,14 +24,22 @@
   drawer.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>drawer.classList.remove('open')));
 })();
 
+
+
+
+/* -- Removed
 // WhatsApp CTA (prefill message)
 (function(){
   const link = document.getElementById('whatsAppCta');
   const msg = encodeURIComponent("Hi, I am interested in joining Pepe Programming Hub. My name is ________.");
   link.href = `https://wa.me/2349066115252?text=${msg}`;
 })();
+*/
 
-/* 
+
+
+
+/* -- Removed
 //Join button — redirects to Google Form
 (function() {
   const btn = document.getElementById('joinBtn');
