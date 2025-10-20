@@ -119,3 +119,11 @@ input {
       border: 1px solid #555;
     }
   }
+
+
+/* Force-Light for Certificate Section*/
+section.force-light {
+  color-scheme: light;     /* ✅ Locks this section to light mode */
+  background: #fff;
+  color: #000;
+}
