@@ -33,6 +33,7 @@
         <a href="#blog" role="menuitem">Blog</a>
         <a href="#join" role="menuitem">Join</a>
         <a href="#testimonials" role="menuitem">Testimonials</a>
+        <a href="#certificates" role="meniitem">Certificates</a>
       </div>
       <div style="display:flex; gap:.5rem; align-items:center">
         <button class="theme" id="themeBtn" type="button" aria-label="Toggle theme">🌙</button>
@@ -223,16 +224,83 @@
   `;
   document.head.appendChild(styleSheet);
 </script>
-<!-- End: Join PPH Contact Form -->
-
-
-
-    
-    
-    
+<!-- End: Join PPH Contact Form -->   
   </div>
 </section>
 
+    
+<!-- Certificate Verification -->
+<section id="certificates" class="section reveal">
+<div>
+  <h2>🎓 Certificate Verification</h2>
+  <p>Enter your Certificate ID to check if it’s authentic.</p>
+
+  <input type="text" id="certificateId" placeholder="Enter Certificate ID">
+  <button id="verifyBtn">Verify</button>
+
+  <div id="result"></div>
+
+  <script>
+    // ✨ STEP 1: PASTE YOUR GOOGLE WEB APP URL BELOW (the one ending with /exec)
+    const webAppURL = "https://script.google.com/macros/s/AKfycbwPp432y_PHVxKmJdvgS_hzacky8s_OiItnElY8mhfBXjEA0sUUAFhwa5qQv4oi_49P/exec";
+
+    // UI elements
+    const verifyBtn = document.getElementById("verifyBtn");
+    const resultDiv = document.getElementById("result");
+
+    verifyBtn.addEventListener("click", verifyCertificate);
+
+    function verifyCertificate() {
+      const certId = document.getElementById("certificateId").value.trim();
+
+      resultDiv.innerHTML = ""; // clear previous
+      if (!certId) {
+        showMessage("⚠️ Please enter a Certificate ID.", "error");
+        return;
+      }
+
+      showMessage("🔍 Searching, please wait...", "info");
+
+      // Make a request to the GAS web app
+      fetch(`${webAppURL}?certificateId=${encodeURIComponent(certId)}`)
+        .then(res => {
+          if (!res.ok) throw new Error("Network error: " + res.status);
+          return res.json();
+        })
+        .then(data => {
+          if (data.found) {
+            const rec = data.record;
+            resultDiv.innerHTML = `
+              <div style="background:#f9f9f9; border:1px solid #ccc; padding:15px; border-radius:10px;">
+                <h3>✅ Certificate Found</h3>
+                <p><b>Certificate ID:</b> ${rec.CertificateID}</p>
+                <p><b>Name:</b> ${rec.Name}</p>
+                <p><b>Course:</b> ${rec.Course}</p>
+                <p><b>Date:</b> ${rec.Date}</p>
+                <p><b>Status:</b> ${rec.Status}</p>
+                <p><b>Issued By:</b> ${rec.IssuedBy}</p>
+              </div>`;
+          } else {
+            showMessage("❌ Certificate not found. Please check the ID and try again.", "error");
+          }
+        })
+        .catch(err => {
+          showMessage("⚠️ Error verifying certificate: " + err.message, "error");
+        });
+    }
+
+    function showMessage(msg, type) {
+      let color;
+      if (type === "error") color = "red";
+      else if (type === "info") color = "gray";
+      else color = "green";
+      resultDiv.innerHTML = `<p style="color:${color};">${msg}</p>`;
+    }
+  </script>
+</div>
+</section>
+
+    
 
     <!-- Testimonials -->
     <section id="testimonials" class="section reveal">
