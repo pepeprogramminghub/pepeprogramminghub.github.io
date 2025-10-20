@@ -290,8 +290,18 @@
           if (data.found) {
             const rec = data.record;
             resultDiv.innerHTML = `
-              <div style="background:#f9f9f9; border:1px solid #ccc; padding:15px; border-radius:10px;">
-                <h3>✅ Certificate Found</h3>
+              <div style="
+                background:#fff !important;
+                color:#000 !important;
+                color-scheme: light !important;
+                border:1px solid #ccc !important;
+                padding:15px !important;
+                border-radius:10px !important;
+                box-shadow:0 4px 12px rgba(0,0,0,0.1) !important;
+                font-family: Arial, sans-serif !important;
+                line-height:1.6 !important;
+                ">
+                <h3 style="color:#2e7d32 !important; margin-top:0 !important;">✅ Certificate Found</h3>
                 <p><b>Certificate ID:</b> ${rec.CertificateID}</p>
                 <p><b>Name:</b> ${rec.Name}</p>
                 <p><b>Course:</b> ${rec.Course}</p>
