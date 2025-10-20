@@ -122,8 +122,4 @@ input {
 
 
 /* Force-Light for Certificate Section*/
-section.force-light {
-  color-scheme: light;     /* ✅ Locks this section to light mode */
-  background: #fff;
-  color: #000;
-}
+
